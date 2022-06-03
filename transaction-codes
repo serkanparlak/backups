@@ -1,238 +1,185 @@
---------------------------------------------------------
---  File created - Friday-June-03-2022   
---------------------------------------------------------
---------------------------------------------------------
---  DDL for Table TRANSACTIONS
---------------------------------------------------------
-
-  CREATE TABLE "GDP_USER"."TRANSACTIONS" 
-   (	"ID" NUMBER GENERATED ALWAYS AS IDENTITY MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE , 
-	"REQUESTNAME" VARCHAR2(150 BYTE), 
-	"STATUS" VARCHAR2(150 BYTE), 
-	"ISACTIVE" NUMBER(1,0), 
-	"CREATEDATE" TIMESTAMP (6), 
-	"MODIFIEDDATE" TIMESTAMP (6), 
-	"ISAUTHENTICATED" NUMBER(1,0), 
-	"APPLICATIONCODE" VARCHAR2(50 BYTE), 
-	"REQUESTMODE" VARCHAR2(20 BYTE), 
-	"ISENCRYPTED" NUMBER(1,0), 
-	"RETRYCOUNT" NUMBER(10,0), 
-	"EXCLUDEAPP" NUMBER, 
-	"ISOTP" NUMBER, 
-	"ISLOGGING" NUMBER(1,0), 
-	"CODE" VARCHAR2(18 BYTE)
-   ) SEGMENT CREATION IMMEDIATE 
-  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
- NOCOMPRESS LOGGING
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "TS_GDP" ;
-REM INSERTING into GDP_USER.TRANSACTIONS
-SET DEFINE OFF;
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetCustomerKVKKServiceRequestCommand','CREIGCK0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetCustomerLoansServiceRequestCommand','CREIGCL0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetCustomerKVKKRequestCommand','CREIGCK0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ForgotPasswordCheckRequestCommand','AUTFPC00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ConfigParameterByUsageAreaRequestCommand','CONCPBUA');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('LoginAsDealerCheckRequestCommand','AUTLADC0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('UploadDocEncodedRequestCommand','CREUDE00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetEarlyPaymentInfoServiceRequestCommand','CREIGEPI');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetDealerCustomerAppsRequestCommand','CREIGDCA');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetCustomerAllInfoByNationalityNumberRequestCommand','CREIGCBN');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetApplicationServicesRequestCommand','CONGAS00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('TestRequestCommand','SIGT0000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CreateUserForDealerRequestCommand','AUTCUFD0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetVavaCarsVecihleRequestCommand','INTIGVC0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetSmsStatusServiceRequestCommand','NOTGSS00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetSmsTokenServiceRequestCommand','NOTGST00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('SendSmsServiceRequestCommand','NOTSS000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ClientErrorRequestCommand','SIGCE000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('IsbankOnBoardingRequestCommand','SIGIOB00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('LogoutRequestCommand','SIGL0000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetApplicationsRequestCommand','CONGA000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetConfigParameterByKeyRequestCommand','CONGCPBK');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetChannelsRequestCommand','CONGC000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetResourceByApplicationCodeRequestCommand','AUTGRBAC');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CreateUserMobileRequestCommand','AUTCUM00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetUserMobileRequestCommand','AUTGUM00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ClientLogRequestCommand','AUTCL000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('UpdateUserStatusRequestCommand','AUTUUS00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CreateOtpForMailRequestCommand','AUTCOFM0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetAllErrorsRequestCommand','CONGAE00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('DoOnboardingForIsbankRequestCommand','INTDOFI0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetTokenRequestCommand','INTGT000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetUserIbanRequestCommand','INTGUI00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetUserInfoRequestCommand','INTGUI00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('RoleRequestCommand','AUTR0000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('LoginAsCorporateCheckRequestCommand','AUTLACC0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetPrmDataServiceRequestCommand','CREGPD00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetInstallmentPaymentInfoServiceRequestCommand','CREIGIPI');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetPartialPaymentInfoServiceRequestCommand','CREIGPPI');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetPaymentPlanServiceRequestCommand','CREIGPP0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetPaymentSimulationServiceRequestCommand','CREIGPS0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetTransactionReceiptServiceRequestCommand','CREIGTR0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantSetDigitalOnboardingDoneServiceRequestCommand','CREISDOD');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantSingleDocumentApproveServiceRequestCommand','CREISDA0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantUpdateCustomerServiceRequestCommand','CREIUC00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantUploadDocEncodedServiceRequestCommand','CREIUDE0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('UploadDocEncodedServiceRequestCommand','CREUDE00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetTransactionsByAppCodeRequestCommand','CONGTBAC');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetTransactionsRequestCommand','CONGT00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CreateClientTokenRequestCommand','AUTCCT00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetErrorListByUsageAreaRequestCommand','CONGELBU');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetTransactionsFromDbRequestCommand','CONGTFD0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetManuelDocumentsRequestCommand','CREGMD00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetManuelDocumentsServiceRequestCommand','CREGMD00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetApiDocumentationsRequestCommand','APIGAD00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('SendSmsOtpRequestCommand','NOTSSO00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetDocumentsServiceRequestCommand','CREGD000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('SendMailOtpRequestCommand','NOTSMO00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ValidateSmsOtpRequestCommand','AUTVSO00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ValidateMailOtpRequestCommand','AUTVMO00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CreateOtpRequestCommand','AUTCO000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ValidateOtpRequestCommand','AUTVO000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetApiKeysRequestCommand','APIGAK00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('AddOrUpdateApiDocumentationRequestCommand','APIAOUAD');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('AddOrUpdateApiKeyRequestCommand','APIAOUAK');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetApiKeyTransactionsRequestCommand','APIGAKT0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CreateUserCorporateRequestCommand','AUTCUC00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetVavaTokenWithAuthorizeCodeRequestCommand','INTGVTWA');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantBackdownPrecheckRequestCommand','CREIBP00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantBackdownPrecheckServiceRequestCommand','CREIBP00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('QrLoginStartedRequestCommand','SIGQLS00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('QrLoginApprovedRequestCommand','SIGQLA00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantNewPaymentPlanApprovedRequestCommand','CREINPPA');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantNewPaymentPlanApprovedServiceRequestCommand','CREINPPA');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantMissingDocumentsAddedRequestCommand','CREIMDA0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantMissingDocumentsAddedServiceRequestCommand','CREIMDA0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CreateTransactionOtpRequestCommand','AUTCTO00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ValidateTransactionOtpRequestCommand','AUTVTO00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('LoginRequestCommand','AUTL0000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('SuperAppLoginCheckRequestCommand','INTSALC0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ConfigParameterByClientRequestCommand','CONCPBC0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('OtpDailyCheckRequestCommand','NOTODC00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetErrorRequestCommand','AUTGE000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CreateSendMailRequestCommand','NOTCSM00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetSendMailRequestCommand','NOTGSM00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('AddApiKeyTransactionsRequestCommand','APIAAKT0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('RemoveApiKeyTransactionsRequestCommand','APIRAKT0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('VavacarsCustomerInfoPostRequestCommand','INTVCIP0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetCustomerNoRequestCommand','AUTGCN00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetDocumentsRequestCommand','CREGD000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetMaturityOptionsRequestCommand','CREGMO00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantCreateCustomerRequestCommand','CREICC00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantCreditApplicationCancelRequestCommand','CREICAC0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantCreditDocumentApproveRequestCommand','CREICDA0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantCreditGetAllApplicationInfoRequestCommand','CREICGAI');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantCreditRequestCommand','CREIC000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantDownloadDocEncodedRequestCommand','CREIDDE0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetAccountTransactionsRequestCommand','CREIGAT0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetCustomerAllInfoRequestCommand','CREIGCAI');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetCustomerAppsRequestCommand','CREIGCA0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetCustomerControlResultsRequestCommand','CREIGCCR');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetCustomerLoansRequestCommand','CREIGCL0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetEarlyPaymentInfoRequestCommand','CREIGEPI');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetInstallmentPaymentInfoRequestCommand','CREIGIPI');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetPartialPaymentInfoRequestCommand','CREIGPPI');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetPaymentPlanRequestCommand','CREIGPP0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetPaymentSimulationRequestCommand','CREIGPS0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetTransactionReceiptRequestCommand','CREIGTR0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantSetDigitalOnboardingDoneRequestCommand','CREISDOD');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantSingleDocumentApproveRequestCommand','CREISDAI');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantUpdateCustomerRequestCommand','CREIUC00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantUploadDocEncodedRequestCommand','CREIUDE0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('PrmDataRequestCommand','CREPD000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ChangeUserPasswordRequestCommand','AUTCUP00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CheckUserPasswordHistoryRequestCommand','AUTCUPH0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ClientTokenRequestCommand','AUTCT000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CreatePasswordHistoryRequestCommand','AUTCPH00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CreateTokenByRefreshRequestCommand','AUTCTBR0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CreateUserRequestCommand','AUTCU000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetUserLastPasswordExpireDateRequestCommand','AUTGULPE');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('LoginCheckRequestCommand','AUTLC000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('RegisterCheckRequestCommand','AUTRC000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ResetUserPasswordRequestCommand','AUTRUP00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('RevokeRefreshTokenRequestCommand','AUTRRT00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('TokenCreateRequestCommand','AUTTC000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('UserRequestCommand','AUTU0000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CaptchaRequestCommand','AUTC0000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ConfigParameterByApplicationRequestCommand','CONCPBA0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ConfigParameterRequestCommand','CONCP000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CreateLoginHistoryRequestCommand','AUTCLH00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetMenuItemsRequestCommand','AUTGMI00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetResourceRequestCommand','AUTGR000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetUserEmailOtpIdRequestCommand','AUTGUEOI');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetUserEmailStatusRequestCommand','AUTGUES0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetUserOIdRequestCommand','AUTGUOI0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetMaturityOptionsServiceRequestCommand','CREGMO00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('UpdateLoginHistoryRequestCommand','AUTULHUU');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('UpdateUserPhoneAndMailRequestCommand','AUTUUPAM');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ValidateCaptchaRequestCommand','AUTVC000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetTsbValueServiceRequestCommand','CREGTV00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetSmsStatusRequestCommand','NOTGSS00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetSmsTokenRequestCommand','NOTGST00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('MailRequestCommand','NOTM0000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('SendSmsRequestCommand','NOTSS000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('TransactionRequestCommand','AUTT0000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetTsbValueRequestCommand','CREGTV00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantCreateCustomerServiceRequestCommand','CREICC00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantCreditApplicationCancelServiceRequestCommand','CREICAC0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantCreditApplicationServiceRequestCommand','CREICA00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantCreditDocumentApproveServiceRequestCommand','CREICDA0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantCreditGetAllApplicationInfoServiceRequestCommand','CREICGAI');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantDownloadDocEncodedServiceRequestCommand','CREIDDE0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetAccountTransactionsServiceRequestCommand','CREIGAT0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetCustomerAllInfoServiceRequestCommand','CREIGCAI');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetCustomerAppsServiceRequestCommand','CREIGCA0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetCustomerControlResultsServiceRequestCommand','CREIGCCR');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('LoginAsWorkerRequestCommand','WORLAW00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('LoginAsWorkerServiceRequestCommand','WORLAW00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('TransferVavacarsSessionToRedisRequestCommand','INTTVSTR');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CheckIsVavacarsApplicationRequestCommand','INTCIVA0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CreateRedirectUriRequestCommand','INTCRU00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetVavacarsCustomerInfoServiceRequestCommand','CREGVCI0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetVavacarsCustomerInfoRequestCommand','CREGVCI0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetVavacarsVehicleRequestCommand','CREGVV00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetVavacarsVehicleServiceRequestCommand','CREGVV00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantSendSmsRequestCommand','NOTISS00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantSendSmsServiceRequestCommand','NOTISS00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetProductOperationApproveListRequestCommand','WORGPOAL');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetProductOperationApproveListServiceRequestCommand','WORGPOAL');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ApproveTransactionServiceRequestCommand','WORAT000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('RefuseTransactionServiceRequestCommand','WORRT000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('SendBackTransactionServiceRequestCommand','WORSBT00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('SendToLastApproverTransactionServiceRequestCommand','WORSTLAT');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ListTransactionDetailServiceRequestCommand','WORLTD00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ListTransactionDetailRequestCommand','WORLTD00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('SendToLastApproverTransactionRequestCommand','WORSTLAT');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('SendBackTransactionRequestCommand','WORSBT00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('RefuseTransactionRequestCommand','WORRT000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ApproveTransactionRequestCommand','WORAT000');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('NationalIdentityIsExistRequestCommand','AUTNIIE0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CheckUserEmailRequestCommand','AUTCUE00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('AddOrUpdateUserExternalRequestCommand','INTAOUUE');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ExternalLoginCheckRequestCommand','INTELC00');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetInsuranceOfferServiceRequestCommand','CREIGIO0');
-Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetInsuranceOfferRequestCommand','CREIGIO0');
---------------------------------------------------------
---  DDL for Index UNIQUE_CONSTRAINT_REQUESTNAME
---------------------------------------------------------
-
-  CREATE UNIQUE INDEX "GDP_USER"."UNIQUE_CONSTRAINT_REQUESTNAME" ON "GDP_USER"."TRANSACTIONS" ("REQUESTNAME") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "TS_GDP" ;
---------------------------------------------------------
---  Constraints for Table TRANSACTIONS
---------------------------------------------------------
-
-  ALTER TABLE "GDP_USER"."TRANSACTIONS" ADD CONSTRAINT "UNIQUE_CONSTRAINT_REQUESTNAME" UNIQUE ("REQUESTNAME")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "TS_GDP"  ENABLE;
-  ALTER TABLE "GDP_USER"."TRANSACTIONS" MODIFY ("ID" NOT NULL ENABLE);
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetCustomerKVKKServiceRequestCommand','CREIGCK0S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetCustomerLoansServiceRequestCommand','CREIGCL0S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetCustomerKVKKRequestCommand','CREIGCK0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ForgotPasswordCheckRequestCommand','AUTFPC00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ConfigParameterByUsageAreaRequestCommand','CONCPBUAR0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('LoginAsDealerCheckRequestCommand','AUTLADC0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('UploadDocEncodedRequestCommand','CREUDE00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetEarlyPaymentInfoServiceRequestCommand','CREIGEPIS0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetDealerCustomerAppsRequestCommand','CREIGDCAR0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetCustomerAllInfoByNationalityNumberRequestCommand','CREIGCBNR0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetApplicationServicesRequestCommand','CONGAS00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CreateUserForDealerRequestCommand','AUTCUFD0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetVavaCarsVecihleRequestCommand','INTIGVC0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetSmsTokenServiceRequestCommand','NOTGST00S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('SendSmsServiceRequestCommand','NOTSS000S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ClientErrorRequestCommand','SIGCE000R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('IsbankOnBoardingRequestCommand','SIGIOB00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('LogoutRequestCommand','SIGL0000R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetApplicationsRequestCommand','CONGA000R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetConfigParameterByKeyRequestCommand','CONGCPBKR0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetChannelsRequestCommand','CONGC000R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetResourceByApplicationCodeRequestCommand','AUTGRBACR0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CreateUserMobileRequestCommand','AUTCUM00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetUserMobileRequestCommand','AUTGUM00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ClientLogRequestCommand','AUTCL000R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('UpdateUserStatusRequestCommand','AUTUUS00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CreateOtpForMailRequestCommand','AUTCOFM0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetAllErrorsRequestCommand','CONGAE00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('DoOnboardingForIsbankRequestCommand','INTDOFI0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetTokenRequestCommand','INTGT000R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetUserIbanRequestCommand','INTGUI00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetUserInfoRequestCommand','INTGUI00R1');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('RoleRequestCommand','AUTR0000R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('LoginAsCorporateCheckRequestCommand','AUTLACC0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetPrmDataServiceRequestCommand','CREGPD00S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetInstallmentPaymentInfoServiceRequestCommand','CREIGIPIS0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetPartialPaymentInfoServiceRequestCommand','CREIGPPIS0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetPaymentPlanServiceRequestCommand','CREIGPP0S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetPaymentSimulationServiceRequestCommand','CREIGPS0S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetTransactionReceiptServiceRequestCommand','CREIGTR0S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantSetDigitalOnboardingDoneServiceRequestCommand','CREISDODS0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantSingleDocumentApproveServiceRequestCommand','CREISDA0S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantUpdateCustomerServiceRequestCommand','CREIUC00S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantUploadDocEncodedServiceRequestCommand','CREIUDE0S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('UploadDocEncodedServiceRequestCommand','CREUDE00S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetTransactionsByAppCodeRequestCommand','CONGTBACR0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CreateClientTokenRequestCommand','AUTCCT00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetErrorListByUsageAreaRequestCommand','CONGELBUR0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetTransactionsFromDbRequestCommand','CONGTFD0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetManuelDocumentsRequestCommand','CREGMD00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetManuelDocumentsServiceRequestCommand','CREGMD00S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetApiDocumentationsRequestCommand','APIGAD00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('SendSmsOtpRequestCommand','NOTSSO00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetDocumentsServiceRequestCommand','CREGD000S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('SendMailOtpRequestCommand','NOTSMO00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ValidateSmsOtpRequestCommand','AUTVSO00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ValidateMailOtpRequestCommand','AUTVMO00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CreateOtpRequestCommand','AUTCO000R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetApiKeysRequestCommand','APIGAK00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('AddOrUpdateApiDocumentationRequestCommand','APIAOUADR0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('AddOrUpdateApiKeyRequestCommand','APIAOUAKR0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetApiKeyTransactionsRequestCommand','APIGAKT0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CreateUserCorporateRequestCommand','AUTCUC00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetVavaTokenWithAuthorizeCodeRequestCommand','INTGVTWAR0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantBackdownPrecheckRequestCommand','CREIBP00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantBackdownPrecheckServiceRequestCommand','CREIBP00S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('QrLoginStartedRequestCommand','SIGQLS00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('QrLoginApprovedRequestCommand','SIGQLA00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantNewPaymentPlanApprovedRequestCommand','CREINPPAR0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantNewPaymentPlanApprovedServiceRequestCommand','CREINPPAS0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantMissingDocumentsAddedRequestCommand','CREIMDA0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantMissingDocumentsAddedServiceRequestCommand','CREIMDA0S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CreateTransactionOtpRequestCommand','AUTCTO00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ValidateTransactionOtpRequestCommand','AUTVTO00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('LoginRequestCommand','AUTL0000R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('SuperAppLoginCheckRequestCommand','INTSALC0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ConfigParameterByClientRequestCommand','CONCPBC0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('OtpDailyCheckRequestCommand','NOTODC00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetErrorRequestCommand','AUTGE000R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CreateSendMailRequestCommand','NOTCSM00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetSendMailRequestCommand','NOTGSM00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('AddApiKeyTransactionsRequestCommand','APIAAKT0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('RemoveApiKeyTransactionsRequestCommand','APIRAKT0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('VavacarsCustomerInfoPostRequestCommand','INTVCIP0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetCustomerNoRequestCommand','AUTGCN00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetDocumentsRequestCommand','CREGD000R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetMaturityOptionsRequestCommand','CREGMO00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantCreateCustomerRequestCommand','CREICC00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantCreditApplicationCancelRequestCommand','CREICAC0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantCreditDocumentApproveRequestCommand','CREICDA0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantCreditGetAllApplicationInfoRequestCommand','CREICGAIR0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantCreditRequestCommand','CREIC000R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantDownloadDocEncodedRequestCommand','CREIDDE0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetAccountTransactionsRequestCommand','CREIGAT0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetCustomerAllInfoRequestCommand','CREIGCAIR0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetCustomerAppsRequestCommand','CREIGCA0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetCustomerControlResultsRequestCommand','CREIGCCRR0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetCustomerLoansRequestCommand','CREIGCL0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetEarlyPaymentInfoRequestCommand','CREIGEPIR0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetInstallmentPaymentInfoRequestCommand','CREIGIPIR0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetPartialPaymentInfoRequestCommand','CREIGPPIR0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetPaymentPlanRequestCommand','CREIGPP0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetPaymentSimulationRequestCommand','CREIGPS0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetTransactionReceiptRequestCommand','CREIGTR0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantSetDigitalOnboardingDoneRequestCommand','CREISDODR0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantSingleDocumentApproveRequestCommand','CREISDAIR0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantUpdateCustomerRequestCommand','CREIUC00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantUploadDocEncodedRequestCommand','CREIUDE0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('PrmDataRequestCommand','CREPD000R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ChangeUserPasswordRequestCommand','AUTCUP00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CheckUserPasswordHistoryRequestCommand','AUTCUPH0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CreatePasswordHistoryRequestCommand','AUTCPH00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CreateTokenByRefreshRequestCommand','AUTCTBR0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CreateUserRequestCommand','AUTCU000R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetUserLastPasswordExpireDateRequestCommand','AUTGULPER0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('LoginCheckRequestCommand','AUTLC000R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ResetUserPasswordRequestCommand','AUTRUP00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('RevokeRefreshTokenRequestCommand','AUTRRT00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('TokenCreateRequestCommand','AUTTC000R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('UserRequestCommand','AUTU0000R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ConfigParameterByApplicationRequestCommand','CONCPBA0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ConfigParameterRequestCommand','CONCP000R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CreateLoginHistoryRequestCommand','AUTCLH00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetMenuItemsRequestCommand','AUTGMI00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetResourceRequestCommand','AUTGR000R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetUserEmailStatusRequestCommand','AUTGUES0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetUserOIdRequestCommand','AUTGUOI0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('UpdateLoginHistoryRequestCommand','AUTULHUUR0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('UpdateUserPhoneAndMailRequestCommand','AUTUUPAMR0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ValidateCaptchaRequestCommand','AUTVC000R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetTsbValueServiceRequestCommand','CREGTV00S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetSmsStatusRequestCommand','NOTGSS00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetSmsTokenRequestCommand','NOTGST00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('MailRequestCommand','NOTM0000R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('SendSmsRequestCommand','NOTSS000R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('TransactionRequestCommand','AUTT0000R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetTsbValueRequestCommand','CREGTV00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantCreateCustomerServiceRequestCommand','CREICC00S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantCreditApplicationCancelServiceRequestCommand','CREICAC0S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantCreditApplicationServiceRequestCommand','CREICA00S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantCreditDocumentApproveServiceRequestCommand','CREICDA0S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantCreditGetAllApplicationInfoServiceRequestCommand','CREICGAIS0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantDownloadDocEncodedServiceRequestCommand','CREIDDE0S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetAccountTransactionsServiceRequestCommand','CREIGAT0S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetCustomerAllInfoServiceRequestCommand','CREIGCAIS0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetCustomerAppsServiceRequestCommand','CREIGCA0S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetCustomerControlResultsServiceRequestCommand','CREIGCCRS0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('LoginAsWorkerRequestCommand','WORLAW00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('LoginAsWorkerServiceRequestCommand','WORLAW00S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('TransferVavacarsSessionToRedisRequestCommand','INTTVSTRR0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CheckIsVavacarsApplicationRequestCommand','INTCIVA0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CreateRedirectUriRequestCommand','INTCRU00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetVavacarsCustomerInfoServiceRequestCommand','CREGVCI0S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetVavacarsCustomerInfoRequestCommand','CREGVCI0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetVavacarsVehicleRequestCommand','CREGVV00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetVavacarsVehicleServiceRequestCommand','CREGVV00S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantSendSmsRequestCommand','NOTISS00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantSendSmsServiceRequestCommand','NOTISS00S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetProductOperationApproveListRequestCommand','WORGPOALR0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetProductOperationApproveListServiceRequestCommand','WORGPOALS0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ApproveTransactionServiceRequestCommand','WORAT000S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('RefuseTransactionServiceRequestCommand','WORRT000S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('SendBackTransactionServiceRequestCommand','WORSBT00S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('SendToLastApproverTransactionServiceRequestCommand','WORSTLATS0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ListTransactionDetailServiceRequestCommand','WORLTD00S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ListTransactionDetailRequestCommand','WORLTD00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('SendToLastApproverTransactionRequestCommand','WORSTLATR0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('SendBackTransactionRequestCommand','WORSBT00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('RefuseTransactionRequestCommand','WORRT000R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ApproveTransactionRequestCommand','WORAT000R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('NationalIdentityIsExistRequestCommand','AUTNIIE0R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CheckUserEmailRequestCommand','AUTCUE00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetTransactionsRequestCommand','CONGT000R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ValidateOtpRequestCommand','AUTVO000R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ClientTokenRequestCommand','AUTCT000R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('CaptchaRequestCommand','AUTC0000R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetMaturityOptionsServiceRequestCommand','CREGMO00S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('TestRequestCommand','SIGT0000R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetUserEmailOtpIdRequestCommand','AUTGUEOIR0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('GetSmsStatusServiceRequestCommand','NOTGSS00S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('RegisterCheckRequestCommand','AUTRC000R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('AddOrUpdateUserExternalRequestCommand','INTAOUUER0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('ExternalLoginCheckRequestCommand','INTELC00R0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetInsuranceOfferServiceRequestCommand','CREIGIO0S0');
+Insert into GDP_USER.TRANSACTIONS (REQUESTNAME,CODE) values ('InstantGetInsuranceOfferRequestCommand','CREIGIO0R0');
